@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+
+  "name": "#NAME#",
+  "description": "Liberate your bikeshare data.",
+  "version": "#VERSION#",
+
+  "icons": {
+    "48": "icon48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["#URL#/account/trips","#URL#/account/trips/*"],
+      "js": [
+        "jquery.js",
+        "highcharts.js",
+        "jquery.livequery.js",
+        "background.js"
+      ],
+      "css": ["background.css"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    "jquery.js",
+    "jquery.livequery.js",
+    "highcharts.js",
+    "background.js",
+    "background.css",
+    "ajax-loader.gif",
+    "twitter_logo_white.png",
+    "star_icon_white.png",
+    "station_distances_by_bicycle.csv",
+    "api_key.json"
+  ],
+
+  "permissions": [
+    "http://divvybrags-leaderboard.herokuapp.com/",
+    "https://maps.googleapis.com/maps/api/distancematrix/json",
+    "storage"
+  ]
+
+}
