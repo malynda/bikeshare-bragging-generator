@@ -109,7 +109,7 @@ $(function() {
         // Next we'll go retrieve the leaderboard
         $.ajax({
           type: "GET",
-          url: "http://divvybrags-leaderboard.herokuapp.com/entries.json?city=Chicago",
+          url: "http://divvybrags-leaderboard.herokuapp.com/entries.json?city=#CITY#",
           success: function(data) {
             leaderboard_html = "";
             var leaderboard = data
@@ -554,7 +554,7 @@ $(function() {
     $.ajax({
       type: "POST",
       url: "http://divvybrags-leaderboard.herokuapp.com/new_entry",
-      data: { leaderboard_post: { flag: update_flag, name: user_name, miles: total_milage, city: "Chicago", month: window.this_month, year: window.this_year  } },
+      data: { leaderboard_post: { flag: update_flag, name: user_name, miles: total_milage, city: "#CITY#", month: window.this_month, year: window.this_year  } },
       success: function(data) {
         leaderboard_html = "";
         var leaderboard = data;
